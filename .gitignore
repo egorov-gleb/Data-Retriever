@@ -1,0 +1,16 @@
+# Секреты 
+creds.json
+*.env
+
+# Python (Мусорные файлы)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Системный мусор (OS)
+.DS_Store
+Thumbs.db
