@@ -157,7 +157,10 @@ SELECT
     (SELECT COUNT(*) FROM auto_test_metrics) AS total_auto_test_metrics;
 ```
 
+<img width="1112" height="312" alt="Image" src="https://github.com/user-attachments/assets/68414636-d37f-4eea-99ae-3675785bb12f" />
+
 ### B. Демонстрация связанных данных (Автотесты)
+
 ```sql
 SELECT
     p.name AS project_name,
@@ -172,8 +175,8 @@ JOIN creatives c ON atm.video_id = c.video_id
 JOIN projects p ON c.project_id = p.id
 LIMIT 5;
 ```
+<img width="1192" height="583" alt="Image" src="https://github.com/user-attachments/assets/683efc31-8bea-485d-9acd-a62b9d018c15" />
 
-Пример запроса, который выводит метрики, связывая их с именами креатива и проекта:
 
 ---
 
