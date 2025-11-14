@@ -188,9 +188,8 @@ LIMIT 5;
 1.  **Neon Connection String:** Получите `DATABASE_URL` из вашего дашборда Neon.
 2.  **Google Service Account:**
     * Создайте Service Account в Google Cloud Platform (GCP).
-    * Включите **Google Sheets API** (для чтения таблицы) и **Google Drive API** (это хорошая практика).
+    * Включите **Google Sheets API** и **Google Drive API**.
     * Скачайте **JSON-ключ** (`credentials.json`).
-    * **Дайте права:** Поделитесь (права Читателя) фейковой Google Таблицей (ссылка ниже) **с `client_email` из JSON-ключа.**
 
 3.  **Конфигурация в Google Colab:**
     * Откройте **"Секреты"** (иконка "ключ" на боковой панели Colab).
@@ -203,7 +202,7 @@ LIMIT 5;
 Для запуска проекта сделайте следующее:
 
 1.  **Скопируйте фейковую папку Drive:** Перейдите по ссылке на папку OCR (ниже) и скопируйте ее **себе** в Google Drive.
-2.  **Скопируйте фейковую таблицу:** Файл Google Sheets должен быть доступен вашему Service Account.
+2.  **Скопируйте фейковую таблицу и дайте права:** Поделитесь (права Читателя) фейковой Google Таблицей (ссылка ниже) **с `client_email` из JSON-ключа.**
 
 * **Google Sheets (Автотесты):** https://docs.google.com/spreadsheets/d/198x3oQ9jPlRaWf2l3gzr9PsAGr68dhfPj2a7K4V9q5g/edit?usp=sharing
 * **Google Drive (Картинки/OCR):** https://drive.google.com/drive/folders/1-Eh3D3AGfikeM8v1S-JCjyxFd1-8_Jx1?usp=sharing
