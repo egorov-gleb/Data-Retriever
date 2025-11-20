@@ -55,7 +55,7 @@ CREATE INDEX idx_hh_hook ON hook_hold_metrics(hook);
 
 
 /* * 4. Журнал метрик из Автотестов (из GSheet)
- * (Исправлена опечатка 'mertics' -> 'metrics')
+ *
  */
 CREATE TABLE auto_test_metrics (
 	id SERIAL PRIMARY KEY,
