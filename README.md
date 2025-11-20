@@ -60,7 +60,7 @@
 
 ```sql
 /* * 1. Справочник Игр / Проектов
- * Хранит "GHM", "GHM-2" и т.д.
+ * Хранит "TR", "HGC" и т.д.
  */
 CREATE TABLE projects (
 	id SERIAL PRIMARY KEY,
