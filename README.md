@@ -64,7 +64,7 @@
 
 ```sql
 /* * 1. Справочник Игр / Проектов
- * Хранит "TR", "HGC" и т.д.
+ * Хранит "TR", "HG" и т.д.
  */
 CREATE TABLE projects (
 	id SERIAL PRIMARY KEY,
@@ -83,8 +83,10 @@ CREATE TABLE creatives (
 	name TEXT NOT NULL,
 	project_id INTEGER NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
+	
 	-- Гарантирует, что имя ролика уникально ВНУТРИ проекта
 	UNIQUE (project_id, name), 
+	
 	-- Связь: Если удалить проект, удалятся и все его ролики
 	FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
 );
@@ -98,13 +100,14 @@ CREATE INDEX idx_creatives_project_id ON creatives(project_id); -- <-- Инде�
 CREATE TABLE hook_hold_metrics (
 	id SERIAL PRIMARY KEY,
 	video_id INTEGER NOT NULL,
-	hook FLOAT,
-	hold FLOAT,
+	hook DOUBLE PRECISION,
+	hold DOUBLE PRECISION,
 	date DATE NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
 	
 	-- Гарантирует, что у ролика не будет двух записей за один день
 	UNIQUE (video_id, date), 
+	
 	-- Связь: Если удалить ролик, удалятся и все его метрики
 	FOREIGN KEY (video_id) REFERENCES creatives(video_id) ON DELETE CASCADE
 );
@@ -120,22 +123,22 @@ CREATE INDEX idx_hh_hook ON hook_hold_metrics(hook);
  *
  */
 CREATE TABLE auto_test_metrics (
-    id SERIAL PRIMARY KEY,
-    video_id INTEGER NOT NULL,
-    date DATE NOT NULL,
-    team TEXT NOT NULL,
+	id SERIAL PRIMARY KEY,
+	video_id INTEGER NOT NULL,
+	date DATE NOT NULL,
+	team TEXT NOT NULL,
+	bench INT,
+	retention DOUBLE PRECISION,
+	clicks INT,
+	installs INT,
+	impressions INT,
+	created_at TIMESTAMP DEFAULT NOW(),
 
-    bench INTEGER,
-    impressions INTEGER,
-    clicks INTEGER,
-    installs INTEGER,
-
-    retention FLOAT,               
-
-    created_at TIMESTAMP DEFAULT NOW(),
-
-    UNIQUE (video_id, date, team),
-    FOREIGN KEY (video_id) REFERENCES creatives(video_id) ON DELETE CASCADE
+	-- Гарантирует, что у ролика не будет двух записей за день ОТ ОДНОЙ КОМАНДЫ
+	UNIQUE (video_id, date, team), 
+	
+	-- Связь: Если удалить ролик, удалятся и эти метрики
+	FOREIGN KEY (video_id) REFERENCES creatives(video_id) ON DELETE CASCADE
 );
 
 COMMENT ON TABLE auto_test_metrics IS 'Метрики из таблицы автотестов';
