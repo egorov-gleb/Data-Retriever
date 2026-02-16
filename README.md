@@ -146,6 +146,7 @@ COMMENT ON TABLE auto_test_metrics IS 'Метрики из таблицы авт
 CREATE INDEX idx_test_video_id ON auto_test_metrics(video_id);
 CREATE INDEX idx_test_date ON auto_test_metrics(date);
 
+
 ```
 ### Принципы хранения метрик
 
