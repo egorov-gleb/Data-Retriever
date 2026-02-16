@@ -116,22 +116,22 @@ CREATE INDEX idx_hh_hook ON hook_hold_metrics(hook);
  *
  */
 CREATE TABLE auto_test_metrics (
-	id SERIAL PRIMARY KEY,
-	video_id INTEGER NOT NULL,
-	date DATE NOT NULL,
-	team TEXT NOT NULL,
-	bench FLOAT,
-	retention FLOAT,
-	clicks INT,
-	installs INT,
-	ctr FLOAT,
-	cr FLOAT,
-	created_at TIMESTAMP DEFAULT NOW(),
+    id SERIAL PRIMARY KEY,
+    video_id INTEGER NOT NULL,
+    date DATE NOT NULL,
+    team TEXT NOT NULL,
 
-	-- Гарантирует, что у ролика не будет двух записей за день ОТ ОДНОЙ КОМАНДЫ
-	UNIQUE (video_id, date, team), 
-	-- Связь: Если удалить ролик, удалятся и эти метрики
-	FOREIGN KEY (video_id) REFERENCES creatives(video_id) ON DELETE CASCADE
+    bench INTEGER,
+    impressions INTEGER,
+    clicks INTEGER,
+    installs INTEGER,
+
+    retention FLOAT,               
+
+    created_at TIMESTAMP DEFAULT NOW(),
+
+    UNIQUE (video_id, date, team),
+    FOREIGN KEY (video_id) REFERENCES creatives(video_id) ON DELETE CASCADE
 );
 
 COMMENT ON TABLE auto_test_metrics IS 'Метрики из таблицы автотестов';
