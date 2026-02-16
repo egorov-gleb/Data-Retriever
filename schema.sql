@@ -15,7 +15,7 @@ COMMENT ON TABLE projects IS 'Справочник проектов';
  */
 CREATE TABLE creatives (
 	video_id SERIAL PRIMARY KEY,
-	name TEXT UNIQUE NOT NULL,
+	name TEXT NOT NULL,
 	project_id INTEGER NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
 	
@@ -35,8 +35,8 @@ CREATE INDEX idx_creatives_project_id ON creatives(project_id); -- <-- Инде�
 CREATE TABLE hook_hold_metrics (
 	id SERIAL PRIMARY KEY,
 	video_id INTEGER NOT NULL,
-	hook FLOAT,
-	hold FLOAT,
+	hook DOUBLE PRECISION,
+	hold DOUBLE PRECISION,
 	date DATE NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
 	
@@ -62,12 +62,11 @@ CREATE TABLE auto_test_metrics (
 	video_id INTEGER NOT NULL,
 	date DATE NOT NULL,
 	team TEXT NOT NULL,
-	bench FLOAT,
-	retention FLOAT,
+	bench INT,
+	retention DOUBLE PRECISION,
 	clicks INT,
 	installs INT,
-	ctr FLOAT,
-	cr FLOAT,
+	impressions INT,
 	created_at TIMESTAMP DEFAULT NOW(),
 
 	-- Гарантирует, что у ролика не будет двух записей за день ОТ ОДНОЙ КОМАНДЫ
