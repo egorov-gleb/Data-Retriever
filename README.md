@@ -76,7 +76,7 @@ COMMENT ON TABLE projects IS 'Справочник проектов';
  */
 CREATE TABLE creatives (
 	video_id SERIAL PRIMARY KEY,
-	name TEXT UNIQUE NOT NULL,
+	name TEXT NOT NULL,
 	project_id INTEGER NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
 	-- Гарантирует, что имя ролика уникально ВНУТРИ проекта
