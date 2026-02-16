@@ -175,13 +175,13 @@ SELECT
     atm.team,
     atm.bench,
     atm.installs,
-    atm.ctr
+    atm.retention
 FROM auto_test_metrics atm
 JOIN creatives c ON atm.video_id = c.video_id
 JOIN projects p ON c.project_id = p.id
 LIMIT 5;
 ```
-<img width="1192" height="583" alt="Image" src="https://github.com/user-attachments/assets/683efc31-8bea-485d-9acd-a62b9d018c15" />
+<img width="1213" height="581" alt="Снимок экрана 2026-02-16 в 22 07 42" src="https://github.com/user-attachments/assets/d31d8b26-2a93-4ffe-9270-ce8cbef958c7" />
 
 ## ⚙️ Настройка и запуск
 
