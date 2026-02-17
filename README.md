@@ -223,6 +223,7 @@ LIMIT 5;
 * Агрегация: `SUM(installs)`
 * Группировка: по дате
 * Назначение: оценка эффективности креативов и анализа конверсии в установки
+<img width="1258" height="680" alt="Снимок экрана 2026-02-17 в 15 21 34" src="https://github.com/user-attachments/assets/8e79985f-a8c0-4c2d-9dc6-db3767d52f2f" />
 
 ---
 
@@ -241,6 +242,7 @@ CTR = SUM(clicks) / SUM(impressions)
 * Отображается в процентном формате
 
 Назначение: оценка кликабельности креативов.
+<img width="1251" height="688" alt="Снимок экрана 2026-02-17 в 15 22 11" src="https://github.com/user-attachments/assets/6470e14d-b777-437e-905d-8165f0439d65" />
 
 ---
 
@@ -258,6 +260,7 @@ IR = SUM(installs) / SUM(impressions)
 * Отображается в процентном формате
 
 Назначение: анализ полной конверсии показов в установки.
+<img width="1255" height="685" alt="Снимок экрана 2026-02-17 в 15 22 35" src="https://github.com/user-attachments/assets/9cfcedeb-9867-4d22-bb56-d7687106d11c" />
 
 ---
 
@@ -265,8 +268,8 @@ IR = SUM(installs) / SUM(impressions)
 
 * Фильтрация по диапазону дат
 * Фильтрация по команде (`team`)
-* Корректная агрегация фактов с учётом уровня детализации данных
 * Использование композитных метрик (CTR, IR)
+<img width="1065" height="665" alt="Снимок экрана 2026-02-17 в 15 23 12" src="https://github.com/user-attachments/assets/717a79bf-a48c-49a0-8c5e-033347d9071d" />
 
 ---
 
