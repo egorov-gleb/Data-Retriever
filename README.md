@@ -303,16 +303,7 @@ IR = SUM(installs) / SUM(impressions)
 ---
 
 ## 📂 Структура репозитория
-.
-├── src
-│   ├── pipelines/      # OCR и GSheets пайплайны
-│   ├── transform/      # очистка и парсинг данных
-│   └── load/           # UPSERT логика
-├── sql/
-│   └── schema.sql      # DDL базы данных
-├── data/
-│   └── raw/            # входные данные (пример)
-└── README.md
+
 
 
 ## 📈 Планы по развитию (v2.1): Полная автоматизация
